@@ -8,7 +8,6 @@ set :user,            'rails'
 set :pty,             true
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/#{fetch(:application)}/current"
-set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 
