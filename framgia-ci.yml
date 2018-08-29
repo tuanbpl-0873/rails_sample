@@ -48,5 +48,5 @@ deploy:
   rocketeer:
     image: framgiaciteam/rails-deployer:1.0
     when:
-      branch: develop
-    run: php rocketeer.phar deploy --on=testing --no-interaction
+      branch: master
+    run: cap production deploy:check
