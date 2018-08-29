@@ -1,7 +1,7 @@
 lock '3.11.0'
 
 # Change these
-set :repo_url,        'git@github.com:dangminhtruong/test-capistrano.git'
+set :repo_url,        'git@github.com:dangminhtruong/devcamp.git'
 set :application,     'test-capistrano'
 set :user,            'rails'
 

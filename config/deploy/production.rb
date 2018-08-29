@@ -10,13 +10,5 @@ server ip_address,
       roles: %w{web app}
 
 set :rails_env, 'production'
-
 set :bundle_flags, '--no-deployment'
-
-set :ssh_options, {
- keys: %w(~/.ssh/id_rsa.pub),
- forward_agent: true,
- port: 22
-}
-
 set :nginx_server_name, '178.128.211.197'

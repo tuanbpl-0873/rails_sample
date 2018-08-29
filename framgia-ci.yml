@@ -1,7 +1,7 @@
 project_type: ruby
 build:
   general_test:
-    image: daothaison/ruby-workspace:latest
+    image: framgiaciteam/rails-workspace:2.5.1
     services:
       mysql_test:
         image: mysql:5.7
@@ -20,13 +20,13 @@ test:
     ignore: true
     command: bundle-audit check --update > .framgia-ci-reports/bundle-audit.txt
   rspec:
-    ignore: false
+    ignore: true
     command: rspec --format html --out .framgia-ci-reports/rspec.html spec/
   brakeman:
     ignore: true
     command: brakeman -o .framgia-ci-reports/brakeman.html -o .framgia-ci-reports/brakeman.json
   reek:
-    ignore: false
+    ignore: true
     command: echo '' | reek --format html > .framgia-ci-reports/reek.html
   rubocop:
     ignore: true
@@ -45,8 +45,8 @@ cache:
     folder: vendor/bundle
     file: Gemfile.lock
 deploy:
-  rocketeer:
+  capistrano_staging:
     image: framgiaciteam/rails-deployer:1.0
     when:
       branch: master
-    run: cap production deploy:check
+    run: cap production deploy
