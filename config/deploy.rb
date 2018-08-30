@@ -2,7 +2,7 @@ lock '3.11.0'
 
 # Change these
 set :repo_url,        'git@github.com:dangminhtruong/devcamp.git'
-set :application,     'test-capistrano'
+set :application,     'devcamp'
 set :user,            'rails'
 
 set :pty,             true
